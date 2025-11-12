@@ -1,0 +1,326 @@
+/* Estilos Generales */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --accent-color: #28a745;
+    --light-bg: #f8f9fa;
+    --dark-text: #343a40;
+    --white: #ffffff;
+    --black: #000000;
+    --food-primary: #ff5722; /* Naranja rojizo para comida */
+    --food-secondary: #ffc107; /* Amarillo para destacar */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: var(--dark-text);
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color); /* Cambiado de var(--dark-text) a var(--primary-color) */
+    color: var(--white);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between; /* Volver a space-between para colocar el toggle correctamente */
+    align-items: center;
+}
+
+.navbar nav {
+    flex-grow: 1; /* Permite que la navegación ocupe el espacio disponible */
+    display: flex;
+    justify-content: center; /* Centrar los enlaces de navegación */
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 20px;
+}
+
+.navbar nav ul li a {
+    color: var(--white);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: var(--dark-text); /* Un color que contraste para el hover */
+}
+
+.mobile-menu-toggle {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Ocultar por defecto en desktop */
+}
+
+/* Hero Section */
+.hero-section {
+    background: var(--primary-color);
+    color: var(--dark-text); /* Cambiado de var(--white) a var(--dark-text) */
+    text-align: center;
+    padding: 0 20px; /* Ajustado el padding vertical a 0 */
+    border-bottom: 5px solid red; /* Borde rojo añadido */
+    height: 90vh; /* Ajustado a altura exacta del 100% del viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section .container {
+    width: 100%;
+}
+
+.hero-section h2 {
+    color: var(--dark-text);
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+/* Sections generales */
+section {
+    padding: 60px 0;
+    text-align: center; /* Centrar todo el contenido de la sección por defecto */
+}
+
+section:nth-child(odd) {
+    background-color: var(--light-bg);
+}
+
+.benefits-section {
+    border-bottom: 5px solid rgb(0, 30, 255); /* Borde rojo añadido */
+}
+
+/* Benefits Section */
+.benefit-grid, .steps-grid, .pricing-grid, .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.benefit-item, .step-item, .price-plan, .testimonial-item, .faq-item {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.benefit-item h3, .step-item h3, .price-plan h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+/* How It Works Section */
+.how-it-works-section {
+    border-bottom: 5px solid red; /* Borde rojo añadido */
+}
+
+.how-it-works-section .food-title {
+    color: var(--food-primary); /* Color para el título */
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 30px;
+}
+
+.how-it-works-section .step-item h3 {
+    color: var(--food-secondary); /* Color para los títulos de los pasos */
+}
+
+.how-it-works-section .step-item .highlight-sabor {
+    color: #ff5722; /* Color específico para la palabra 'Sabor' */
+}
+
+.how-it-works-section .step-item:nth-child(2) {
+    border: 2px solid #ff5722; /* Borde para la segunda tarjeta */
+}
+
+/* Pricing Section */
+.price-plan.featured {
+    border: 2px solid var(--accent-color);
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.price-plan .price {
+    font-size: 2.5em;
+    color: var(--dark-text);
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.price-plan ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.price-plan ul li {
+    margin-bottom: 10px;
+}
+
+/* Testimonials Section */
+.testimonials-section .testimonial-item p {
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+.testimonials-section .testimonial-item .author {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+/* FAQ Section */
+.faq-item {
+    text-align: left;
+}
+
+.faq-item h3 {
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.faq-item p {
+    display: none; /* Se mostrará con JS */
+    margin-top: 10px;
+    padding-left: 15px;
+    border-left: 2px solid var(--primary-color);
+}
+
+.faq-item.active p {
+    display: block;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-text);
+    color: var(--white);
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.footer h2 {
+    color: var(--white);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.footer p {
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar nav {
+        display: none; /* Ocultar menú en móvil por defecto */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Ajustar según la altura del navbar */
+        left: 0;
+        background-color: var(--primary-color); /* Usar el mismo azul para el fondo del menú móvil */
+        text-align: center; /* Centrar los items del menú móvil */
+        padding: 10px 0;
+    }
+
+    .navbar nav.active {
+        display: flex;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar nav ul li {
+        margin: 10px 0;
+    }
+
+    .mobile-menu-toggle {
+        display: block; /* Mostrar toggle en móvil */
+    }
+
+    .hero-section {
+        padding: 60px 20px;
+    }
+
+    .hero-section h2 {
+        font-size: 2.5em;
+    }
+
+    .benefit-grid, .steps-grid, .pricing-grid, .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .price-plan.featured {
+        transform: scale(1.02);
+    }
+}
